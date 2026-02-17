@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="mb-6 md:mb-0 text-center md:text-left">
           <h2 className="text-2xl font-hand font-bold text-white mb-2">Moose Studios</h2>
           <p className="text-sm text-coffee-400">© {new Date().getFullYear()} Moose Studios. All rights reserved.</p>
-          <p className="text-xs text-coffee-600 mt-1">Made with React, Tailwind & Gemini</p>
+          <p className="text-xs text-coffee-600 mt-1">Made with React & Tailwind</p>
         </div>
 
         <div className="flex space-x-6">
