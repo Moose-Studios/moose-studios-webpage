@@ -20,8 +20,8 @@ const App: React.FC = () => {
     const loadData = async () => {
       try {
         const [gamesRes, contentRes] = await Promise.all([
-          fetch('./ourGames.json'),
-          fetch('./gameContent.json')
+          fetch('/moose-studios-webpage/ourGames.json'),
+          fetch('/moose-studios-webpage/gameContent.json')
         ]);
         
         const gamesData = await gamesRes.json();
