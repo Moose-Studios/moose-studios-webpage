@@ -8,5 +8,5 @@ deploying updates to webpage
 
 
 some commands that work to force redeploy
-rmdir /s /q dist
+rmdir /s dist
 npm run deploy
