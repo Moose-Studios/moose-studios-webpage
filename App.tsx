@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import GameCard from './components/GameCard';
-import BrainstormBrew from './components/BrainstormBrew';
 import Footer from './components/Footer';
 import GameDetails from './components/GameDetails';
 import { NAV_ITEMS } from './constants';
@@ -137,8 +136,6 @@ const App: React.FC = () => {
                 </div>
               </div>
             </section>
-
-            <BrainstormBrew />
           </>
         )}
       </main>
