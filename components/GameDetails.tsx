@@ -129,15 +129,67 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game, onBack }) => {
                       </div>
                       
                       <h3 className="text-xl font-bold text-coffee-900 mb-3">{update.title}</h3>
+                      {/*Changes subsection */}
+                      {update.changes && update.changes.length > 0 && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-bold text-coffee-500 uppercase tracking-widest mb-3 flex items-center">
+                            <i className="fas fa-star mr-2 text-coffee-400"></i> New Features & Changes
+                          </h4>
+                          <ul className="space-y-2 bg-red-50/50 p-4 rounded-xl border border-red-100/50">
+                            {update.changes.map((change, cIdx) => (
+                              <li key={cIdx} className="text-coffee-700 flex items-start text-sm md:text-base">
+                                <span className="text-amber-500 mr-2">-</span>
+                                <span>{change}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {/* Bug fixes */}
+                      {update.bugFixes && update.bugFixes.length > 0 && (
+                        <div className="mb-6">
+                          <h4 className="text-xs font-bold text-coffee-500 uppercase tracking-widest mb-3 flex items-center">
+                            <i className="fas fa-bug-slash mr-2 text-coffee-400"></i> Bug Fixes
+                          </h4>
+                          <ul className="space-y-2 bg-red-50/50 p-4 rounded-xl border border-red-100/50">
+                            {update.bugFixes.map((fix, fIdx) => (
+                              <li key={fIdx} className="text-coffee-700 flex items-start text-sm md:text-base">
+                                {/* <i className="fas fa-check text-green-500 mr-2 mt-1 text-xs"></i> */}
+                                <span className="text-amber-500 mr-2">-</span>
+                                <span>{fix}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                       
-                      <ul className="space-y-2">
-                        {update.changes.map((change, cIdx) => (
-                          <li key={cIdx} className="text-coffee-700 flex items-start">
-                            <span className="text-amber-500 mr-2">•</span>
-                            <span>{change}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {/* Screenshots */}
+                      {update.screenshots && update.screenshots.length > 0 && (
+                        <div className="mt-6">
+                          <h4 className="text-xs font-bold text-coffee-500 uppercase tracking-widest mb-3 flex items-center">
+                            <i className="fas fa-camera mr-2 text-coffee-400"></i> Screenshots
+                          </h4>
+                          <div className="space-y-2 bg-red-50/50 p-4 rounded-xl border border-red-100/50 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            {update.screenshots.map((src, sIdx) => (
+                              <div key={sIdx} className="justify-self-center rounded-xl overflow-hidden shadow-sm border border-coffee-100 group cursor-pointer hover:shadow-md transition-all flex justify-center items-center">
+                                <a
+                                  href={src}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block"
+                                >
+                                <img 
+                                  src={src} 
+                                  alt={`Update screenshot ${sIdx + 1}`} 
+                                  className="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                  referrerPolicy="no-referrer"
+                                />
+                                </a>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
