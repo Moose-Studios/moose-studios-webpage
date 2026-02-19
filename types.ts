@@ -3,6 +3,8 @@ export interface GameUpdate {
   date: string;
   title: string;
   changes: string[];
+  bugFixes?: string[];
+  screenshots?: string[];
 }
 
 export interface Game {
