@@ -4,24 +4,30 @@
     "fullDescription": "In Espresso Express, you step into the shoes of a rookie barista tasked with managing the busiest coffee stall in the Grand Junction Station. As locomotives roar past, you must balance brewing complexity, customer patience, and limited resources. Upgrade your grinders, discover secret bean blends, and unlock a heartwarming story about the commuters who pass through every day.",
     "updates": [
       {
-        "version": "v1.1.0",
-        "date": "Nov 12, 2023",
-        "title": "The Holiday Roast",
+        "version": "v0.0.2",
+        "date": "Mar 15, 2025",
+        "title": "Added Trees",
         "changes": [
-          "Added festive decorations to the station",
-          "New seasonal drink: Peppermint Mocha",
-          "Fixed a bug where the espresso machine would stop steaming during rush hour",
-          "Optimized loading times for mobile devices"
+          "Created a world with trees"
+        ],
+        "bugFixes":[
+          "testing bug fixes 1",
+          "testing bug fixes 2"
+        ],
+        "screenshots":[
+          "screenshots/image2.png",
+          "screenshots/image3.png"
         ]
       },
       {
-        "version": "v1.0.5",
-        "date": "Oct 05, 2023",
-        "title": "Balance & Beans",
+        "version": "v0.0.1",
+        "date": "Mar 15, 2025",
+        "title": "Project Started",
         "changes": [
-          "Adjusted difficulty curves for levels 10-15",
-          "Improved drag-and-drop sensitivity",
-          "Added new character: The Grumpy Conductor"
+          "Project was reacted. General idea of the game was formed"
+        ],
+        "screenshots":[
+          "screenshots/image1.png"
         ]
       }
     ]
