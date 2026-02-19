@@ -35,13 +35,6 @@ const Hero: React.FC = () => {
           >
             Play Our Games
           </a>
-          <a
-            href="#brew"
-            onClick={(e) => handleScrollTo(e, '#brew')}
-            className="px-8 py-4 bg-transparent text-coffee-900 border-2 border-coffee-900 rounded-full font-bold text-lg hover:bg-coffee-900 hover:text-white transition-all transform hover:-translate-y-1 cursor-pointer"
-          >
-            Brainstorm Brew
-          </a>
         </div>
       </div>
     </div>

@@ -22,16 +22,3 @@ export interface NavItem {
   label: string;
   href: string;
 }
-
-export interface BrainstormParams {
-  genre: string;
-  mood: string;
-  elements: string;
-}
-
-export interface BrainstormResult {
-  title: string;
-  tagline: string;
-  concept: string;
-  mechanics: string[];
-}
