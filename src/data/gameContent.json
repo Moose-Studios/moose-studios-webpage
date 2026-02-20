@@ -20,7 +20,7 @@
         "description":"Discover the truth about Moosington’s rule and decide the fate of the kingdom."
       }
     ],
-    "images":["screenshots/image32.png","screenshots/image33.png","screenshots/image34.png"],
+    "images":["screenshots/image33.png","screenshots/image34.png","screenshots/image35.png"],
     "updates": [
       {
         "version": "0.1.26",
