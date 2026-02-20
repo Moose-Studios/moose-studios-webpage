@@ -18,6 +18,8 @@ export interface Game {
   releaseDate: string;
   fullDescription?: string;
   updates?: GameUpdate[];
+  keyFeatures?: string[];
+  images?: string[];
 }
 
 export interface NavItem {

@@ -74,6 +74,52 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game, onBack }) => {
               <p className="text-coffee-700 text-lg leading-relaxed mb-8 whitespace-pre-wrap">
                 {game.fullDescription || game.description}
               </p>
+             {game.keyFeatures && game.keyFeatures.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-coffee-900 mb-3">
+                    Key Features
+                  </h3>
+                  <ul className="space-y-3">
+                    {game.keyFeatures.map((feature, idx) => (
+                      <li key={idx} className="text-coffee-700">
+                        <span className="font-semibold text-coffee-900">
+                          <span className="text-amber-500 mr-2">-</span>
+                          {feature.title}
+                        </span>
+                        {" - "}
+                        <span>{feature.description}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+
+              {/* Gameplay Images */}
+              {game.images && game.images.length > 0 && (
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-coffee-900 mb-4">
+                    Gameplay
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {game.images.map((src, idx) => (
+                      <a
+                        key={idx}
+                        href={src}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-2xl overflow-hidden shadow-md border border-coffee-100 hover:shadow-lg transition-all"
+                      >
+                        <img
+                          src={src}
+                          alt={`Gameplay ${idx + 1}`}
+                          className="w-full max-h-72 object-contain"
+                        />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
               
               <div className="grid md:grid-cols-2 gap-6 p-6 bg-coffee-50 rounded-2xl border border-coffee-100">
                 <div>

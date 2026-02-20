@@ -15,7 +15,13 @@ import gamesData from './src/data/ourGames.json';
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [games, setGames] = useState<Game[]>([]);
   const [gameContent, setGameContent] = useState<
-    Record<string, { fullDescription: string; updates: GameUpdate[] }>
+    Record<string, 
+      { description: string;
+        keyFeatures: string[];
+        images: string[];
+        updates: GameUpdate[] 
+      }
+    >
   >({});
   const [loading, setLoading] = useState(true);
 
@@ -36,7 +42,9 @@ import gamesData from './src/data/ourGames.json';
     const details = gameContent[game.id];
     setSelectedGame({
       ...game,
-      fullDescription: details?.fullDescription || game.description,
+      fullDescription: details?.description || game.description,
+      keyFeatures: details?.keyFeatures || [],
+      images: details?.images || [],
       updates: details?.updates || []
     });
   };

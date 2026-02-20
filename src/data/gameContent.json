@@ -1,7 +1,26 @@
 
 {
   "sir-bearington": {
-    "fullDescription": "Step into the paws of Sir Bearington, a brave bear with one dream - to become a knight. Serving under the newly crowned King Moosington, you’ll take on quests, battle dangerous foes, and rise in power as you fight for your place in the kingdom. But not all is as it seems. The deeper you go, the clearer it becomes: Moosington’s rule hides dark intentions. To save the land, Sir Bearington must rise above his oath and challenge the crown itself. He won’t face this journey alone - by his side stands the cunning and loyal Corgnilious, ready to help turn the tide.",
+    "description": "Step into the paws of Sir Bearington, a brave bear with one dream - to become a knight. Serving under the newly crowned King Moosington, you’ll take on quests, battle dangerous foes, and rise in power as you fight for your place in the kingdom. But not all is as it seems. The deeper you go, the clearer it becomes: Moosington’s rule hides dark intentions. To save the land, Sir Bearington must rise above his oath and challenge the crown itself. He won’t face this journey alone - by his side stands the cunning and loyal Corgnilious, ready to help turn the tide.",
+    "keyFeatures":[
+      {
+        "title":"Epic Quests & Boss Fights",
+        "description":"Hunt for loot, take on mighty foes, and grow stronger with every victory."
+      },
+      {
+        "title":"Deep Character Customization",
+        "description":"Build your bear your way. Choose between magical power, protective magic armor, or brute physical strength with melee combat and heavy armor."
+      },
+      {
+        "title":"Progression That Matters",
+        "description":"Gain talent points, forge unique builds, and adapt your playstyle to every challenge."
+      },
+      {
+        "title":"A Story of Loyalty and Betrayal",
+        "description":"Discover the truth about Moosington’s rule and decide the fate of the kingdom."
+      }
+    ],
+    "images":["screenshots/image32.png","screenshots/image33.png","screenshots/image34.png"],
     "updates": [
       {
         "version": "0.1.26",
