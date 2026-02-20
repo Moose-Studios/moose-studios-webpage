@@ -137,9 +137,31 @@ const GameDetails: React.FC<GameDetailsProps> = ({ game, onBack }) => {
                           </h4>
                           <ul className="space-y-2 bg-red-50/50 p-4 rounded-xl border border-red-100/50">
                             {update.changes.map((change, cIdx) => (
-                              <li key={cIdx} className="text-coffee-700 flex items-start text-sm md:text-base">
-                                <span className="text-amber-500 mr-2">-</span>
-                                <span>{change}</span>
+                              <li key={cIdx} className="text-coffee-700 text-sm md:text-base">
+                                {typeof change === "string" ? (
+                                  <div className="flex items-start">
+                                    <span className="text-amber-500 mr-2">-</span>
+                                    <span>{change}</span>
+                                  </div>
+                                ) : (
+                                  <div>
+                                    <div className="flex items-start">
+                                      <span className="text-amber-500 mr-2">-</span>
+                                      <span>{change.text}</span>
+                                    </div>
+
+                                    {change.sub && (
+                                      <ul className="ml-6 mt-1 space-y-1">
+                                        {change.sub.map((subItem, sIdx) => (
+                                          <li key={sIdx} className="flex items-start">
+                                            <span className="text-amber-500 mr-2">-</span>
+                                            <span>{subItem}</span>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    )}
+                                  </div>
+                                )}
                               </li>
                             ))}
                           </ul>
