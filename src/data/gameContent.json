@@ -1,8 +1,645 @@
 
 {
-  "espresso-express": {
-    "fullDescription": "In Espresso Express, you step into the shoes of a rookie barista tasked with managing the busiest coffee stall in the Grand Junction Station. As locomotives roar past, you must balance brewing complexity, customer patience, and limited resources. Upgrade your grinders, discover secret bean blends, and unlock a heartwarming story about the commuters who pass through every day.",
+  "sir-bearington": {
+    "description": "Step into the paws of Sir Bearington, a brave bear with one dream - to become a knight. Serving under the newly crowned King Moosington, you’ll take on quests, battle dangerous foes, and rise in power as you fight for your place in the kingdom. But not all is as it seems. The deeper you go, the clearer it becomes: Moosington’s rule hides dark intentions. To save the land, Sir Bearington must rise above his oath and challenge the crown itself. He won’t face this journey alone - by his side stands the cunning and loyal Corgnilious, ready to help turn the tide.",
+    "keyFeatures":[
+      {
+        "title":"Epic Quests & Boss Fights",
+        "description":"Hunt for loot, take on mighty foes, and grow stronger with every victory."
+      },
+      {
+        "title":"Deep Character Customization",
+        "description":"Build your bear your way. Choose between magical power, protective magic armor, or brute physical strength with melee combat and heavy armor."
+      },
+      {
+        "title":"Progression That Matters",
+        "description":"Gain talent points, forge unique builds, and adapt your playstyle to every challenge."
+      },
+      {
+        "title":"A Story of Loyalty and Betrayal",
+        "description":"Discover the truth about Moosington’s rule and decide the fate of the kingdom."
+      }
+    ],
+    "images":["screenshots/image32.png","screenshots/image33.png","screenshots/image34.png"],
     "updates": [
+      {
+        "version": "0.1.26",
+        "date": "Nov 10, 2025",
+        "title": "Quest Icons Update",
+        "changes": ["Added quest complete icon",
+                    "Added quest Available icon",
+                    "Added new script QuestIconHandler that will handle the icons",
+                    "QuestState: enum showing the state quests are in",
+                    "QuestPanelHandler now sets QuestState to InProgress when player starts quest",
+                    "QuestIconHandler now shows correct icon to indicate if a quest is complete, in progress, or available",
+                    "KillQuest now sets State to Completed when condition is met"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.25",
+        "date": "Nov 9, 2025",
+        "title": "Loot Table Update",
+        "changes": ["Unique loot drop table now has a base drop chance, this will dictate if items drop at all"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.24",
+        "date": "Nov 8, 2025",
+        "title": "Item and Resource Balance",
+        "changes": ["Mana cost for abilities will scale based on players INT",
+                    "Player now has armor scaling which redued damage taken. 1point = 1% damage reduction against enemies of same level",
+                  {
+                    "text":"New Legendary Mage Hat",
+                    "sub":["HP: -250HP","HP regen: 5HP/sec","INT: 50","Mana: 150","Mana regen: 15/sec"]
+                  },
+                  {
+                    "text":"Staff of Jordan Changes",
+                    "sub":["Armor: 225 -> 25","HP: 1500 -> -200","HP regen: 115 -> 15","INT: 1250 -> 50","Mana: 1500 -> 150","Mana regen: 600 -> 15"]
+                  }],
+        "bugFixes": ["Fixed bug where healing ability was trying to access an object that didnt exist"],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.23",
+        "date": "Nov 7, 2025",
+        "title": "Loot Update",
+        "changes": ["Added EntityUniqueLootTable to enemies that will only drop 1 item from a list",
+                    "Added EntityLootTable which rolls on every item in the list",
+                    "Added Killable script, its responsible for containing the onDeath callback",
+                    {
+                      "text":"Staff of Jordan Changes",
+                      "sub":["INT: 35 -> 1250","STR: 0 -> 225","Armor: 1 -> 115","HP: 0 -> 430","Mana: 0 -> 1500","HP regen: 0 -> 115","Mana regen: 0 -> 600"]
+                    }],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.22",
+        "date": "Nov 4, 2025",
+        "title": "Screen Error SCT",
+        "changes": ["UI now shows if the player doesnt have enough mana","UI now shows if the player doesnt have a target"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image62.png","screenshots/image63.png"]
+      },
+      {
+        "version": "0.1.21",
+        "date": "Nov 4, 2025",
+        "title": "Equipped weapon placement",
+        "changes": ["Equipped staffs are now on the players back not in hand"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.20",
+        "date": "Nov 2, 2025",
+        "title": "Github Actions",
+        "changes": ["Added Github actions to create ticket  in website board to track version changes"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.12",
+        "date": "Nov 1, 2025",
+        "title": "Player Stats Cleanup",
+        "changes": ["Added GetPlayerStats to PlayerScript so there is a way to get player stats",
+      {
+        "text":"Cleaned up PlayerStats",
+        "sub":["Added playerIsDead bool","Removed player GameObject reference","Enemy now checks if player is dead, and stops attacking/following","GameReferences now track spawn locations and has a playerDied callback function","PlayerInfoHandler now handles respawning the player","Added RespawnPoint object"]
+      }],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.11",
+        "date": "Nov 1, 2025",
+        "title": "Tooltips",
+        "changes": ["Tooltips now have an item level text","Main menu version text is now automatically updated","Added item level calculation to equipment"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.10",
+        "date": "Nov 1, 2025",
+        "title": "Christmas Update",
+        "changes": ["Updated the main menu to be more festive"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image61.png"]
+      },
+      {
+        "version": "0.1.9",
+        "date": "Oct 29, 2025",
+        "title": "Target Selection Outline",
+        "changes": ["Nameplates now have a yellow border around them when the enemy is selected"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image60.png"]
+      },
+      {
+        "version": "0.1.8",
+        "date": "Oct 28, 2025",
+        "title": "Gameplay Revamp & Tab Targetting",
+        "changes": ["Changed the way the player camera works, instead of locking it ot the cursor, you now have to hold left click to pan, left + right click to move in the direction like an mmorpg",
+                    "Abilities arent aimed anymore, instead the player can now click on enemeis and target them",
+                    "Added UI frame to show what enemy the player is targetting",
+                    "Added the ability to tab target nearby enemies"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image59.png"]
+      },
+      {
+        "version": "0.1.7",
+        "date": "Oct 25, 2025",
+        "title": "XP & Damage Changes",
+        "changes": ["Staff FireBall base damage: 10 -> 25","Enemy XP formula: 45 + 5*level -> 95 + 5*level"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.6",
+        "date": "Oct 5, 2025",
+        "title": "New Quest System",
+        "changes": ["Added a golden frog quest giver","Added quests that quest giver can give","Added UI element to see active quests on the screen","Added UI element where you can select what quest to pick up from NPC"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image56.png","screenshots/image57.png","screenshots/image58.png"]
+      },
+      {
+        "version": "0.1.5",
+        "date": "Oct 4, 2025",
+        "title": "Level System Changes",
+        "changes": ["Adjusted XP from enemies. Was: HP = XP now: 5*lvl + 45","Player XP required formula changed","Added a new equipment item: Uncommon Mage Hat. Drops from enemies with a low drop chance"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.4",
+        "date": "Oct 3, 2025",
+        "title": "New Equipment Stats",
+        "changes": ["Reduced max level from 50 -> 20","Updated Wooden Staff stats to use the new stats system","Reduced STR to +1/lvl","Reduced INT to +1/lvl","Removed armor stat",
+      {
+        "text":"New Equipment stats",
+        "sub":["Health","Health Regen","Mana","Mana Regen"]
+      }],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image55.png"]
+      },
+      {
+        "version": "0.1.3",
+        "date": "Oct 2, 2025",
+        "title": "New Ability Update",
+        "changes": ["Added logic to create castable abilities", "Added a new cast bar UI element","Added new ability: BlackHole",
+      {
+        "text":"BlackHole Ability",
+        "sub":["CastTime: 3sec","ManaCost: 200","Damage: 150","Cooldown: 15sec"]
+      }],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image54.png"]
+      },
+      {
+        "version": "0.1.2",
+        "date": "Sep 30, 2025",
+        "title": "Inventory System Revamp",
+        "changes": ["Player can now drag and drop items around the inventory",
+                    "Drag and drop things out of inventory",
+                    "Drag and drop onto cahracter panel to equip items",
+                    "Replaced Wooden Staff icon",
+                    "Added Warlock Talent Tree",
+                    "Added first warlock ability DeathBolt, a single target ability that applies a DoT on impact",
+                  {
+                    "text":"Mage Changes",
+                    "sub":["Reduced passive talent from 25INT -> 5INT"]
+                  }],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image52.png","screenshots/image53.png"]
+      },
+      {
+        "version": "0.1.1",
+        "date": "Sep 29, 2025",
+        "title": "Ability Balance Changes",
+        "changes": [{
+          "text": "FireRain Changes",
+          "sub":["Damage: 10 -> 8","Mana cost: 60 -> 100"]
+        },{
+          "text":"FireBall Changes",
+          "sub":["Damage: 30 -> 40"]
+        }],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.1.0",
+        "date": "Sep 28, 2025",
+        "title": "Main Menu Update",
+        "changes": [
+          {
+            "text": "Main Menu Changes",
+            "sub": ["Added game version text bottom right","Added credits button","Added settings button","Added idle Sir Bearington holding 2 swords","Added background environment","Added title text"]
+
+        },
+        {
+          "text":"FireRain Changes",
+          "sub":["Cooldown: 15s -> 10s","Damage: 15 -> 10","Mana cost: 30 -> 60"]
+        },
+        {
+          "text":"Enemy Nameplates Changes",
+          "sub":["Enemy levels will now be colored","Enemies 10 levels or higher will not show level instead will show ??","Enemies 6-9 levels higher than player will be red","Enemies 3-5 levels higher than player will be orange","Enemmies within 2 levels of player will be yellow","Enemies 3-9 levels lower than player will be green","Enemies 10 levels lower than player will be gray"]
+        }
+      ],
+        "bugFixes": ["Fixed bug where dragging ability from talent tree somewhere other than actionbar caused it to get stuck and cause errors",
+                     "Fixed bug where placing an ability on actionbar with an ability already there caused the actionbar slot to contain both abilities",
+                     "Fixed bug where having 2 or more of the same ability would only show the cooldown on the main instance of the ability"],
+        "screenshots": ["screenshots/image50.png","screenshots/image51.png"]
+      },
+      {
+        "version": "0.0.46",
+        "date": "Sep 27, 2025",
+        "title": "Loot Table Update",
+        "changes": [{
+          "text": "Loot Table Changes",
+          "sub": ["Enemies cant drop rare or higher quality loot anymore","Chest starts with a common sword and a common staff"]
+        },
+        {
+          "text": "Weapon Changes",
+          "sub": ["Common Wooden Staff INT reduced from 7 -> 3", "Common Wooden Staff damage reduced from 12 -> 5"]
+        },
+        {
+          "text": "Build Setting Changes",
+          "sub": ["Added Game Icon","Updated build version from 0.1.1 -> 0.0.1"]
+        },
+        {
+          "text": "Ability FireRain Changes",
+          "sub": ["Mana Cost: 20 -> 30", "Damage: 30 -> 15"]
+        }
+      ],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.45",
+        "date": "Sep 26, 2025",
+        "title": "Passive Talents",
+        "changes": ["Added passive talents, they can increase player stats (armor / strength / intellect) or change ability stats (dmg/CD/Mana cost)","Updated Mage talent tree","Updated Priest talent tree","Added tooltips to passive talents"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image48.png","screenshots/image49.png"]
+      },
+      {
+        "version": "0.0.44",
+        "date": "Sep 25, 2025",
+        "title": "New Character Scene",
+        "changes": ["Added new Player Scene, contains player and game manager object. Now player will nto be despawned when entering other maps"],
+        "bugFixes": ["Fixed bug where going to man menu and back into game would cause reference to talent text to be broken because callback was never removed",
+                     "UpdateMana and UpdateHealth now check if callbacks are null",
+                     "Added logic to loading scene to stop tiem while scenes are loading. Player was falling through the ground because player would load before the world"],
+        "screenshots": ["screenshots/image47.png"]
+      },
+      {
+        "version": "0.0.43",
+        "date": "Sep 23, 2025",
+        "title": "Player Stats & XP Update",
+        "changes": ["Max level for player updated: 20 -> 50",
+                    "Enemy now take reduced damage if higher level than player",
+                    "Enemies now take increaesd damage if lower level than player",
+                    "Added common tier mage hat",
+                    "Updated enemy loot table",
+                    "New Floating Combat Text (XP), which now spawns when player gets XP",
+                    "Enemies give reduced XP if they are 5levels or lower than the player",
+                    "Updated Mana regen for player. Was 3%/2s -> (5+(INT/2))/2sec",
+                    "Updated HP regen for player. was 3%/2s -> (5+(STR/2))/2sec",
+                    "Player now starts with 500 mana was 200",
+                    "Both HP and Mana scale using 500 * 1.055^(lvl-1)",
+                    "STR and INT now provide 1% to max HP and max INT per point respectively"],
+        "bugFixes": ["Fixed healing potion starting count at 0 in inventory","Fixed coins starting count at 5857 in inventory"],
+        "screenshots": ["screenshots/image46.png"]
+      },
+      {
+        "version": "0.0.42",
+        "date": "Sep 22, 2025",
+        "title": "New Ability",
+        "changes": ["Added FireRain an AOE ability that spawns meteors that land on enemies doing damage",
+                    "Moved check for cooldown and instantiation to ability SO",
+                    "MagicAbilityScript (FireballScript) does not do math for damage anymore, ability SO does",
+                    "Refactored Ability SO, it now has references to playerStats, ability Icon and cooldown. It also tries casting and sets itself to be on CD",
+                    "Added TalentSlotHandler which automatically fills in icons, abilities and other things required for the talent slot to work"],
+        "bugFixes": ["Fixed bug where abilities did more damage than they should have",
+                     "Fixed bug where in the build it wouldn't show ability cooldowns"],
+        "screenshots": ["screenshots/image45.png"]
+      },
+      {
+        "version": "0.0.41",
+        "date": "Sep 21, 2025",
+        "title": "Bug fixes",
+        "changes": ["Added in-game debugger console"],
+        "bugFixes": ["Fixed bug where all dropped items were retained in the manager scene","Fixed bug where loading screen was open after loading the WorldScene in build"],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.40",
+        "date": "Sep 20, 2025",
+        "title": "Wooden Staff Update",
+        "changes": ["Refactored logic for beams, beams now are handled by the ScriptableObject","Wooden staff now has additional rarities: Uncommon, Rare, Epic, Legendary","Added a Quit button to the main menu"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.39",
+        "date": "Sep 19, 2025",
+        "title": "XP Changes & New Staff",
+        "changes": ["MageHat stats update: Int 150 -> 35","Staff of Jordan Damage and INT 5 -> 35","Added new Wooden Staff of common rarity","Updated amount of xp dropped from enemies. XP now scales with enemy HP","Adjusted player XP required to be more inline with new XP drops from enemies"],
+        "bugFixes": ["Fixed bug where XP bar showed 'New Text' before getting XP","Fixed interactable not set for DroppedStartingSword"],
+        "screenshots": ["screenshots/image44.png"]
+      },
+      {
+        "version": "0.0.38",
+        "date": "Sept 18, 2025",
+        "title": "Bug Fixes",
+        "changes": ["Updated enemy HP scaling with a new formula. Under level 8 they will have less hp, over level 8 will have more"],
+        "bugFixes": ["Fixed bug where tooltips were misplaced in the build of the game. They were offset from the mouse position, and didnt correctly track movement",
+      "Fixed bug where talent tree icons would reduce in size everytime the player would drag an ability to the actionbar. Only occured during the build of the game","Fixed bug where ScrollingCombatText would spawn below the ground when enemies were on hills","Fixed bug where enemies with more than 500hp would not correctly display hp and would require a hit to update"],
+        "screenshots": ["screenshots/image41.png","screenshots/image42.png","screenshots/image43.png"]
+      },
+      {
+        "version": "0.0.37",
+        "date": "Sep 17, 2025",
+        "title": "Enemy Spawner Overhaul",
+        "changes": ["Added spawners all over the map","Enemies de-spawn when far enough from the player","Spawners only activate when near the player","Added FPS counter"],
+        "bugFixes": ["Addressed an issue where if a Fireball missed an enemy and flew off it would never despawn. Now Fireball projectiles get destroyed after 30sec"],
+        "screenshots": ["screenshots/image38.png","screenshots/image39.png","screenshots/image40.png"]
+      },
+      {
+        "version": "0.0.36",
+        "date": "Sep 14, 2025",
+        "title": "Talent Tree Update",
+        "changes": ["Added talent pages, now the talent tree will be split into classes with their own pages","Talents are now locked by default and require a talent point to unlock","Player now gains a talent point every level"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image36.png","screenshots/image37.png"]
+      },
+      {
+        "version": "0.0.35",
+        "date": "Sep 8, 2025",
+        "title": "UI Scene Implemented",
+        "changes": ["Removed references to QuantityBhv","Added Main Menu button from the pause UI","Implemented UI scene that now works"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.34",
+        "date": "Sep 7, 2025",
+        "title": "Minor UI Update",
+        "changes": ["Moved GameManager into UI scene"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.33",
+        "date": "Sep 5, 2025",
+        "title": "UI Healthbar Update",
+        "changes": ["Removed the use of minimalist asset bars, added my own custom UI bars to allow to split the UI into its own scene","Replaced HP, Mana, XP bars with my own custom ones"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image32.png"]
+      },
+      {
+        "version": "0.0.32",
+        "date": "Sep 3, 2025",
+        "title": "Scene Update",
+        "changes": ["Added a way to pass a list of scenes to load","Added UI scene"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.31",
+        "date": "Aug 24, 2025",
+        "title": "Additive Scene Update",
+        "changes": ["Added a first loading scene, the first scene that loads before main menu","Added a loading scene, this is called between scene changes","Added a way to load scenes with scene names","Updated project settings, added company, version, and product name"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.30",
+        "date": "Aug 2, 2025",
+        "title": "Main Menu Update",
+        "changes": ["Created a Main Menu","Updated README.md to include the trello board"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.29",
+        "date": "Apr 21, 2025",
+        "title": "Tooltips Update",
+        "changes": ["Added tooltips to items and abilities","Refactored interaction to allow Interactable class to be inherited"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image30.png","screenshots/image31.png"]
+      },
+      {
+        "version": "0.0.28",
+        "date": "Apr 20, 2025",
+        "title": "Abilities and Ability Cooldowns",
+        "changes": ["Abilities now show cooldown on the actionbar","Added a new ability that heals the player. It scales with INT, spawns Scrolling Combat Text, and has an effect"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image27.png","screenshots/image28.png","screenshots/image29.png"]
+      },
+      {
+        "version": "0.0.27",
+        "date": "Apr 19, 2025",
+        "title": "Pause Menu & Window Handling Update",
+        "changes": ["Talents cant be open when character and inventory UI is","Cant open Talents, Character UI, or inventory when paused. Will automatically close pause menu","Enemies damage scales with levels","Updated pause menu UI"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.26",
+        "date": "Apr 16, 2025",
+        "title": "Enemies Update",
+        "changes": ["Enemies attack when they get close to the player"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.25",
+        "date": "Apr 15, 2025",
+        "title": "Dropped Item Template",
+        "changes": ["Added a dropped template","Added a starting sword","Added a mana flask asset"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.24",
+        "date": "Apr 12, 2025",
+        "title": "Item Lifespans & Enemy Update",
+        "changes": ["Items that are dropped now have a timer before they get removed from the world","Enemies code was refactored and now have armor and levels"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.23",
+        "date": "Apr 11, 2025",
+        "title": "UI Update & Mana Use",
+        "changes": ["Updated UI to use new bars","Implemented mana, health and mana regen","Abilities now use mana"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.22",
+        "date": "Apr 10, 2025",
+        "title": "New Healthbar assets",
+        "changes": ["Added a healthbar asset pack to improve UI visuals",
+        "Abilities now duplicate wehn dragged from the talent tree, allowing the player ot have multiple on the action bars (still share cooldown)","created OnTop object that can be used to force UI elements to be on top of everything else"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.21",
+        "date": "Mar 30, 2025",
+        "title": "Partial Ability Implementation",
+        "changes": ["Added ActionBar class","Added TalentTree class","Updated MagicAbilityScript class","Added drag and drop"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image26.png"]
+      },
+      {
+        "version": "0.0.20",
+        "date": "Mar 28, 2025",
+        "title": "Viking helmet fix & Spawns",
+        "changes": ["Added more enemy spawn points","Added viking helmet to loot table for enemies"],
+        "bugFixes": ["Fixed stats bug","Fixed homing bug"],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.19",
+        "date": "Mar 27, 2025",
+        "title": "Ability & Armor Update",
+        "changes": ["Added a viking helmet as an equippable item","Added a fireball ability to test out the architecture for abilities"],
+        "bugFixes": ["Fixed bug where changing weapons causes next weapon to attack","Fixed bug where swapping weapons mid animation locked the staff to always be on cooldown"],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.18",
+        "date": "Mar 26, 2025",
+        "title": "UI & Enemy Update",
+        "changes": ["Added Thunderfury as an item to the game","Added aggro range to the enemies, so when the player is in range they get targeted"],
+        "bugFixes": ["Fixed bug where you could hit aggro range of the enemy with spells and melee","Fixed bug where unpausing with escape would keep inventory UI active"],
+        "screenshots": ["screenshots/image25.png"]
+      },
+      {
+        "version": "0.0.17",
+        "date": "Mar 25, 2025",
+        "title": "Weapon Update",
+        "changes": ["Added a multiweapon system","Weapons now control what attack the player does when left clicking","staff of jordan now shoots a fire ball"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.16",
+        "date": "Mar 25, 2025",
+        "title": "Bug Fixes & Weapon Update",
+        "changes": ["Added sword as a drop item","Added staff and sword icons"],
+        "bugFixes": ["Fixed bug where staff of jordan was massive", "Fixed bug that prevented the player from unequipping items"],
+        "screenshots": []
+      },
+      {
+        "version": "0.0.15",
+        "date": "Mar 24, 2025",
+        "title": "Scrolling Combat Text",
+        "changes": ["Added scrolling combat text to the game"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image23.png"]
+      },
+      {
+        "version": "0.0.14",
+        "date": "Mar 24, 2025",
+        "title": "Updated Equiping System",
+        "changes": ["Player can now equip items"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image22.png"]
+      },
+      {
+        "version": "0.0.13",
+        "date": "Mar 23, 2025",
+        "title": "Rarity Outline Inventory Update",
+        "changes": ["Added rarity outlines for items in the inventory"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image24.png"]
+      },
+      {
+        "version": "0.0.12",
+        "date": "Mar 23, 2025",
+        "title": "Inventory Update",
+        "changes": ["Cleaned up the project", "Inventory now is able to handle stackable and unstackable items"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image19.png","screenshots/image20.png","screenshots/image21.png"]
+      },
+      {
+        "version": "0.0.11",
+        "date": "Mar 22, 2025",
+        "title": "Inventory System",
+        "changes": ["Added an inventory system to the game"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image17.png","screenshots/image18.png"]
+      },
+      {
+        "version": "0.0.10",
+        "date": "Mar 22, 2025",
+        "title": "Font Update",
+        "changes": ["Updated the font to feel more unique"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image16.png"]
+      },
+      {
+        "version": "0.0.9",
+        "date": "Mar 21, 2025",
+        "title": "Equipable Hat",
+        "changes": ["Added a mage hat the player can pickup and equip"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image14.png","screenshots/image15.png"]
+      },
+      {
+        "version": "v0.0.8",
+        "date": "Mar 20, 2025",
+        "title": "Pause Screen & New Loot",
+        "changes": ["Added a pause screen that pauses the game","Added a dropped legendary staff"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image12.png","screenshots/image13.png"]
+      },
+      {
+        "version": "v0.0.7",
+        "date": "Mar 19, 2025",
+        "title": "Loot Beams",
+        "changes": ["Added loot beams to the game, will be used for dropped loot to indicate loot rarity"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image11.png"]
+      },
+      {
+        "version": "v0.0.6",
+        "date": "Mar 17, 2025",
+        "title": "Added a chest and an interactiable",
+        "changes": ["Added a chest with floating text above it, when the player is near it", "Added a potion item that will be an item the player can pick up and use"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image8.png","screenshots/image9.png","screenshots/image10.png"]
+      },
+      {
+        "version": "v0.0.5",
+        "date": "Mar 17, 2025",
+        "title": "Nav Mesh Added",
+        "changes": ["Added a nav mesh to the game, allowing AI to move around the game world"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image6.png","screenshots/image7.png"]
+      },
+      {
+        "version": "v0.0.4",
+        "date": "Mar 16, 2025",
+        "title": "Rendering pipeline updated",
+        "changes": ["Updated the rendering pipeline to use URP - improving visuals", "Added grass to the game"],
+        "bugFixes": [],
+        "screenshots": ["screenshots/image5.png"]
+      },
+      {
+        "version": "v0.0.3",
+        "date": "Mar 15, 2025",
+        "title": "Added enemies with health bars",
+        "changes":[
+          "Added enemies to the game, with health bars above their heads"
+        ],
+        "screenshots":[
+          "screenshots/image4.png"
+        ]
+      },
       {
         "version": "v0.0.2",
         "date": "Mar 15, 2025",
@@ -32,6 +669,13 @@
       }
     ]
   },
+  
+  
+  
+  
+  
+  
+  
   "moose-mysteries": {
     "fullDescription": "The pines hold secrets, and Detective Antlers is the only one who can sniff them out. Moose Mysteries is a point-and-click adventure game blending classic noir atmosphere with quirky woodland humor. Explore hand-drawn environments, gather clues from local wildlife, and solve the mystery of the Missing Maple Syrup. Every choice you make impacts the forest ecosystem.",
     "updates": [

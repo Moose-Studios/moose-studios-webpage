@@ -8,39 +8,33 @@ import GameDetails from './components/GameDetails';
 import { NAV_ITEMS } from './constants';
 import { Game, GameUpdate } from './types';
 
-const App: React.FC = () => {
+import gamesData from './src/data/ourGames.json';
+  import contentData from './src/data/gameContent.json';
+
+  const App: React.FC = () => {
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [games, setGames] = useState<Game[]>([]);
-  const [gameContent, setGameContent] = useState<Record<string, { fullDescription: string, updates: GameUpdate[] }>>({});
+  const [gameContent, setGameContent] = useState<
+    Record<string, 
+      { description: string;
+        keyFeatures: string[];
+        images: string[];
+        updates: GameUpdate[] 
+      }
+    >
+  >({});
   const [loading, setLoading] = useState(true);
 
-  // Fetch JSON data on mount
+  // Load static JSON on mount
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const [gamesRes, contentRes] = await Promise.all([
-          fetch('/moose-studios-webpage/src/data/ourGames.json'),
-          fetch('/moose-studios-webpage/src/data/gameContent.json')
-        ]);
-        
-        const gamesData = await gamesRes.json();
-        const contentData = await contentRes.json();
-        
-        setGames(gamesData);
-        setGameContent(contentData);
-      } catch (error) {
-        console.error("Error loading portfolio data:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
+    setGames(gamesData);
+    setGameContent(contentData);
+    setLoading(false);
   }, []);
 
   // Scroll to top when game is selected
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [selectedGame]);
 
   const handleViewGame = (game: Game) => {
@@ -48,7 +42,9 @@ const App: React.FC = () => {
     const details = gameContent[game.id];
     setSelectedGame({
       ...game,
-      fullDescription: details?.fullDescription || game.description,
+      fullDescription: details?.description || game.description,
+      keyFeatures: details?.keyFeatures || [],
+      images: details?.images || [],
       updates: details?.updates || []
     });
   };
