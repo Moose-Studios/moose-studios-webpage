@@ -676,32 +676,16 @@
   
   
   
-  "moose-mysteries": {
-    "fullDescription": "The pines hold secrets, and Detective Antlers is the only one who can sniff them out. Moose Mysteries is a point-and-click adventure game blending classic noir atmosphere with quirky woodland humor. Explore hand-drawn environments, gather clues from local wildlife, and solve the mystery of the Missing Maple Syrup. Every choice you make impacts the forest ecosystem.",
+  "steampunk-survivors": {
+    "description": "You are tasked with taking down a mad scientist whose obsession with creating mechanical beings leads to his downfall. His final creation, a deceptively cute yet powerful king slime, kills him and takes control of the lab. The player is a mage that is part of the mage district, which plays the role of protecting the city from any danger that arises. The mage district is always the last call that's made, and they deal with the biggest threats that pose to the city.",
+    "images":["screenshots/steampunk_image1.png","screenshots/steampunk_image2.png","screenshots/steampunk_image3.png","screenshots/steampunk_image4.png","screenshots/steampunk_image5.png","screenshots/steampunk_image6.png"],
     "updates": [
       {
-        "version": "v0.9.2 Beta",
-        "date": "Jan 20, 2024",
-        "title": "Forest expansion",
+        "version": "v1.0.0",
+        "date": "Dec 17, 2024",
+        "title": "Full Release",
         "changes": [
-          "Opened the 'Maple Grove' area for exploration",
-          "Implemented a new dialogue system with wildlife",
-          "Visual overhaul of the inventory UI"
-        ]
-      }
-    ]
-  },
-  "bean-counter": {
-    "fullDescription": "Forget gold and silver—in this world, coffee beans are the only currency that matters. Bean Counter is a deck-building roguelike where your combat power is determined by your economic prowess. Play your cards right to invest in futures, dodge taxes from the Caffeine King, and build a trading empire from a single burlap sack.",
-    "updates": [
-      {
-        "version": "Alpha v0.1.0",
-        "date": "Feb 01, 2024",
-        "title": "Initial Brew",
-        "changes": [
-          "First playable prototype launched",
-          "Basic market fluctuation mechanics implemented",
-          "3 starter bean classes added (Light, Medium, Dark Roast)"
+          "Released the full version of the game"
         ]
       }
     ]
