@@ -23,6 +23,20 @@
     "images":["screenshots/image33.png","screenshots/image34.png","screenshots/image35.png"],
     "updates": [
       {
+        "version": "0.1.27",
+        "date": "Nov 11, 2025",
+        "title": "UI Tweaks",
+        "changes": ["Added GetManaRegen and GetHPRegen functions in playerstats",
+                    "Character Panel now shows HP/tick and Mana/tick and Armor",
+                    "Character Panel now has new font",
+                    "Added TooltipManager which handles showing and hiding tooltips",
+                    "Refactored tooltips to not be singleton",
+                    "Items now dont show Stats or ilvl, they show Count instead",
+                    "Equipment Tooltip now shows all stats an item gives"],
+        "bugFixes": [],
+        "screenshots": []
+      },
+      {
         "version": "0.1.26",
         "date": "Nov 10, 2025",
         "title": "Quest Icons Update",
@@ -686,6 +700,43 @@
         "title": "Full Release",
         "changes": [
           "Released the full version of the game"
+        ]
+      }
+    ]
+  },
+
+
+  "TBD": {
+    "description": "TBD",
+    "updates": [
+      {
+        "version": "v0.0.2",
+        "date": "Mar 13, 2026",
+        "title": "small fixes",
+        "changes":[
+          "Fixed github actions to use correct key",
+          "Fixed github actions to use correct project name",
+          "Fixed github actions to point to the correct location to update version number"
+        ]
+      },
+      {
+        "version": "v0.0.1",
+        "date": "Mar 12, 2026",
+        "title": "Unity Project Created",
+        "changes": [
+          "Started the unity project",
+          "Added AsyncLoadingScenes package",
+          "Created scenes needed",
+          "Updated project settings to include correct version",
+          "Added github actions to update version and create ticket in the website board every update"
+        ]
+      },
+      {
+        "version": "v0.0.0a",
+        "date": "Feb 22, 2026",
+        "title": "Game Idea Born",
+        "changes": [
+          "Game idea was born, started writing out a game design document to capture the games core principals and ideas"
         ]
       }
     ]

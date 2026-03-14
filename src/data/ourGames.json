@@ -15,7 +15,15 @@
     "description": "Step into the shoes of a mage that is tasked with cleaning up a mad scientists mess.",
     "genre": "Roguelike",
     "imageUrl": "screenshots/steampunk_image1.png",
-    "tags": ["Pixel art", "2D", "Steampunk"],
+    "tags": ["Pixel-art", "2D", "Steampunk"],
     "releaseDate": "2024"
+  },
+  {
+    "id": "TBD",
+    "title": "TBD",
+    "description": "TBD",
+    "genre": "Roguelite",
+    "tags": ["2D","Roguelite","Pixel-art"],
+    "releaseDate": "In Development"
   }
 ]
